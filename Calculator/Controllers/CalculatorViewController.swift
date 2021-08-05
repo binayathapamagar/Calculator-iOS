@@ -70,12 +70,10 @@ class CalculatorViewController: UIViewController {
                 
         let calculateButtonTitle = sender.currentTitle!
         
-        guard let result = calculatorLogic.calculate(with: calculateButtonTitle) else {
-            fatalError("Calculate method returned with a nil instead of a result!")
+        if let result = calculatorLogic.calculate(with: calculateButtonTitle) {
+            resultLabelValue = result
         }
-        
-        resultLabelValue = result
-        
+                
     }
 }
 
